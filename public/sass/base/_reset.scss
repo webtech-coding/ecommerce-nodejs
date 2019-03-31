@@ -1,0 +1,17 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+    box-sizing: inherit;
+}
+
+body{
+    box-sizing: border-box;
+    font-weight: 100;
+}
+
+.container{
+    width: $container;
+    margin: 0 auto;
+}
+

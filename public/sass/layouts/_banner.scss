@@ -1,0 +1,43 @@
+.banner{
+    background-image: url('../../images/banner.jpg');
+    background-size: cover;
+    background-position: bottom;
+    height:500px;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+
+    &__moto{
+     
+        position: absolute;
+        right: 10%;
+        top:50%;
+        transform: translateY(-50%);
+        font-family: 'Righteous', cursive;
+       
+
+        &-top, &-bottom{
+            font-size: rem(20px);
+            background: #000000;
+            color: #fff;
+            display: inline-block;
+            padding: rem(10px) rem(20px);
+            margin: rem(5px);
+         
+        
+        }
+        &-title{
+            background: #fff;
+            padding: rem(20px) rem(50px);
+            font-size: rem(60px);
+            text-transform: uppercase;
+            -webkit-clip-path: polygon(5% 0%, 100% 0, 95% 100%, 0% 100%);
+            clip-path: polygon(5% 0%, 100% 0, 95% 100%, 0% 100%);
+            letter-spacing: 1px;
+
+        }
+
+    }
+
+}

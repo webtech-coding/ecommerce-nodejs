@@ -1,0 +1,109 @@
+.products{
+    margin-top: rem(50px);
+    max-width: rem(1200px);
+    margin: rem(120px) auto;
+    &__heading{
+        text-transform: uppercase;
+        color: rgba(#000000,.8);
+        padding-bottom: rem(5px);
+        font-size: rem(32px);
+        text-align: center;
+        letter-spacing: 1px;
+        font-weight: 100;
+        margin-bottom: rem(100px);
+    }
+    
+    &__container{
+        display: grid;
+        grid-template-columns: .5fr 3fr;
+        grid-gap: rem(10px);
+        align-items: flex-start;
+    }
+
+    &__category{
+        //border-right: 1px solid rgba(#000000,.2);
+        width: 50%;
+        
+        &--title{
+            font-size: rem(18px);
+            text-transform: uppercase;
+            margin-bottom: rem(20px)
+           
+        }
+        &--items{
+            list-style: none;
+            
+        }
+
+        &--item{
+            padding: rem(5px) 0;
+            text-transform: uppercase;
+            border-bottom: 1px dotted rgba(#000000,.6);
+            margin-right: rem(20px);
+            transition: padding .4s ease-in;
+            font-size: rem(12px);
+            cursor: pointer;
+            &:hover{
+                padding-left: 15px;
+            }
+        }
+
+    }
+
+    &__items{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        grid-gap:rem(25px);
+
+
+    }
+
+    &__item{
+        border: 1px solid rgba(#c0c0c0,.3);
+        text-align: center;
+        cursor: pointer;
+        position: relative;
+
+
+        &-overlay{
+            position: absolute;
+            
+            color:#fff;
+            display: none;
+            transition: all .4s ease-in;
+            height: 100%;
+            width: 100%;
+        }
+
+        &-icon{
+            position: absolute;
+            top:50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            font-size: rem(24px);
+        }
+
+        &:hover .products__item-overlay{
+            display: block;
+            background: rgba(#000000, .2)
+        }
+
+
+        &-img{
+            width: 80%;
+           
+            margin-bottom: rem(20px)
+        }
+
+        &-title{
+            text-transform: capitalize;
+            margin-bottom: rem(5px);
+           
+        }
+        &-price{
+           padding-bottom: rem(10px);
+           text-transform: capitalize;
+           font-size: rem(14px);
+        }
+    }
+}

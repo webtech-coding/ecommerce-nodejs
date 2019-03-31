@@ -1,0 +1,35 @@
+.brand{
+    background: url('../../images/brand.jpg');
+    height:500px;
+    width: 100%;
+    background-size: cover;
+    position: relative;
+
+    &__content{
+        position: absolute;
+        top:50%;
+        left:5%;
+        transform: translateY(-50%);
+        color:#fff;
+        
+    }
+    &__heading{
+        font-size: rem(28px);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        padding: rem(10px) 0px;
+        font-family:  'Roboto', sans-serif; 
+        font-weight: 600;
+    }
+    &__paragraph{
+        font-size: rem(16px);
+        font-family:  'Roboto', sans-serif; 
+        letter-spacing: 1px;
+        font-weight: 100;
+
+    }
+    &__button{
+        padding:rem(10px) rem(20px);
+        margin-top: rem(20px)
+    }
+}
