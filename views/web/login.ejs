@@ -1,0 +1,34 @@
+<%- include('./../includes/header.ejs') %>
+<link href="https://fonts.googleapis.com/css?family=Raleway|Roboto:100,400|Righteous" rel="stylesheet">
+</head>
+<body>
+
+
+
+   <div class="login">
+       <div class="login__content">
+            <div class="login__content-heading">Please provide your email and password</div>
+            <% if(errors) { %>
+                <% errors.forEach(function(error) { %>
+                    <div class="message message--error">
+                        <%= error.msg %>
+                    </div>
+                <% }); %>
+            <% }%>
+
+            <%- messages('flash', locals) %>
+            <form class="login__form" method="POST" action="/login">
+                <div class="login__form-control">
+                    <label for="" class="login__form-label">Email</label>
+                    <input type="text" class="login__form-input" name="email" value="<%=email %>">
+                </div>
+                <div class="login__form-control">
+                        <label for="" class="login__form-label">Password</label>
+                        <input type="password" class="login__form-input" name="password">
+                </div>
+                <button class="login__form-button" type="submit">Login</button>
+            </form>
+       </div>
+      
+   </div>
+<%- include('./../includes/footer.ejs') %>

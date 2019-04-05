@@ -56,6 +56,60 @@ body {
     .header__cart-amount {
       font-size: 0.75rem; }
 
+.message {
+  text-align: center;
+  padding: 0.9375rem;
+  margin: 0.9375rem 0;
+  letter-spacing: 1px;
+  font-size: 0.75rem; }
+  .message--error {
+    background: rgba(248, 51, 51, 0.8);
+    color: #fff; }
+  .message--success {
+    background: rgba(36, 224, 99, 0.8);
+    color: #fff; }
+
+.nav {
+  height: 80px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center; }
+  .nav__menu {
+    display: flex;
+    justify-content: space-between;
+    font-family: "Roboto, sans-serif"; }
+    .nav__menu-items {
+      list-style: none;
+      margin-right: 1.875rem; }
+    .nav__menu-item {
+      display: inline-block;
+      padding: 0 0.9375rem;
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      letter-spacing: 1px;
+      color: black;
+      cursor: pointer;
+      font-weight: 400; }
+      .nav__menu-item:hover {
+        color: rgba(0, 0, 0, 0.6); }
+  .nav__admin-items {
+    list-style: none;
+    background: black;
+    padding: 0.625rem; }
+  .nav__admin-item {
+    padding: 0 0.9375rem;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    color: black;
+    cursor: pointer;
+    font-weight: 400;
+    color: #fff; }
+  .nav__admin-button {
+    background: transparent;
+    color: #fff;
+    cursor: pointer; }
+
 .banner {
   background-image: url("../../images/banner.jpg");
   background-size: cover;
@@ -209,3 +263,39 @@ body {
   .brand__button {
     padding: 0.625rem 1.25rem;
     margin-top: 1.25rem; }
+
+.login {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400; }
+  .login__content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 1.5625rem;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.4); }
+    .login__content--error {
+      color: red;
+      margin-top: 1.25rem;
+      text-align: center;
+      font-size: 0.75rem;
+      font-weight: 400; }
+  .login__form-control {
+    margin: 1.25rem 0px; }
+  .login__form-label {
+    display: block;
+    font-size: 0.75rem;
+    margin-bottom: 0.1875rem; }
+  .login__form-input {
+    height: 2rem;
+    width: 100%;
+    outline: none;
+    border: 1px solid rgba(0, 0, 0, 0.2); }
+  .login__form-button {
+    background: #000000;
+    color: #fff;
+    padding: 0.625rem 1.25rem;
+    cursor: pointer; }

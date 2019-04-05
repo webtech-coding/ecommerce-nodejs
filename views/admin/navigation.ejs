@@ -1,0 +1,23 @@
+<%- include('../includes/header.ejs') %>
+
+<link href="https://fonts.googleapis.com/css?family=Raleway|Roboto:100|Righteous" rel="stylesheet">
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav__menu">
+            <ul class="nav__menu-items">
+                <li class="nav__menu-item">Categories</li>
+                <li class="nav__menu-item">Products</li>
+            </ul>
+        </div>
+        <div class="nav__admin">
+            <ul class="nav__admin-items">
+                <li class="nav__admin-item">
+                   <form method="POST" action="admin/logout">
+                        <input type="submit" class="nav__admin-button" value="Logout">
+                   </form>
+                   
+                </li>
+            </ul>
+        </div>
+    </nav>
