@@ -6,14 +6,14 @@
     <nav class="nav">
         <div class="nav__menu">
             <ul class="nav__menu-items">
-                <li class="nav__menu-item">Categories</li>
-                <li class="nav__menu-item">Products</li>
+                <li class="nav__menu-item"><a href="/admin/categories" class="nav__menu-link">Categories</a></li>
+                <li class="nav__menu-item"><a href="/admin/products" class="nav__menu-link">Products</a></li>
             </ul>
         </div>
         <div class="nav__admin">
             <ul class="nav__admin-items">
                 <li class="nav__admin-item">
-                   <form method="POST" action="admin/logout">
+                   <form method="POST" action="/admin/logout">
                         <input type="submit" class="nav__admin-button" value="Logout">
                    </form>
                    
@@ -21,3 +21,4 @@
             </ul>
         </div>
     </nav>
+

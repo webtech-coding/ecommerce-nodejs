@@ -30,6 +30,11 @@
                 color: rgba(#000000, .6);
             }
         }
+
+        &-link{
+            text-decoration: none;
+            color: rgba(#000000, 1);
+        }
     }
 
     &__admin{

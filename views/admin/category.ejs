@@ -1,0 +1,35 @@
+<%- include('./navigation.ejs') %>
+    
+    <div class="table__container">
+            <div class="table-users">
+                    <div class="header">
+                        <p>Categories</p>
+                    </div>
+                    <div>
+                        <a href="/admin/categories/add"><button class="table__button">Add new<span class="ti-plus"></span></button></a>
+                    </div>
+                    
+                    <% if(count>0){ %>
+                    <table cellspacing="0">
+                       <tr>
+                          <th>CATEGORY NAME</th>
+                          <th>-</th>
+                          
+                       </tr>
+                       <% categories.forEach(function(category){%>
+                       <tr>
+                          <td><%= category.name %></td>
+                          <td> <a class="table-link" href="/admin/categories/edit/<%=category.slug%>"><span class="ti-pencil"></span></a> |
+                               <a class="table-link delete" data-id="<%=category._id%>"><span class="ti-trash"></span></a></td>
+                       </tr>
+                       <% })%>
+                 
+                      
+                    </table>
+                    <%}else{%>
+                        <h3>No any categories yet</h3>
+                        <%}%>
+                 </div>
+    </div>
+
+<%- include('../includes/footer.ejs') %>

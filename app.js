@@ -68,7 +68,7 @@ const admin=require('./routes/admin')
 app.use('/admin/',auth,admin)
 
 const category=require('./routes/category')
-app.use('/admin/',auth,category)
+app.use('/admin/categories',auth,category)
 
 //SERVER CONFIG
 const PORT=3000
