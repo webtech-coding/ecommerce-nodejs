@@ -16,7 +16,7 @@ route.post('/edit/:slug',[
     body('name','Please provide a category name').isLength({min:1})
 ],category.postEditCategory)
 
-route.get('/delete/:id')
+route.get('/delete/:id',category.deleteCategory)
 
 module.exports=route
 

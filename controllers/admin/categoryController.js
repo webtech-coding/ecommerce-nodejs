@@ -87,5 +87,13 @@ const postEditCategory=async (req,res)=>{
 
 }
 
+const deleteCategory=async (req,res)=>{
+    const id=req.params.id
+    await Category.findByIdAndRemove(id)
 
-module.exports={getCategory,addCategory,postCategory,editCategory,postEditCategory}
+    req.flash('success','Deleted successfully')
+    res.redirect('/admin/categories')
+}
+
+
+module.exports={getCategory,addCategory,postCategory,editCategory,postEditCategory,deleteCategory}

@@ -6,6 +6,7 @@ const bodyParser = require('body-parser')
 const session=require('express-session')
 const MongoDBStore=require('connect-mongodb-session')(session)
 const flash=require('connect-flash')
+const fileUpload=require('express-fileupload')
 
 //INITIATE APP
 const app=express()
@@ -42,6 +43,9 @@ app.use(session({
 //SET FLASh
 app.use(flash())
 
+//FILE UPLOAD
+app.use(fileUpload())
+
 //GLOABL VARIABLE
 app.locals.errors=null 
 
@@ -51,7 +55,6 @@ app.use((req,res,next)=>{
     res.locals.messages=require('express-messages')(req, res)
     next()
 })
-
 
 //CONSTANTS
 const publicPath=path.join(__dirname,'public/')
@@ -69,6 +72,9 @@ app.use('/admin/',auth,admin)
 
 const category=require('./routes/category')
 app.use('/admin/categories',auth,category)
+
+const products=require('./routes/product')
+app.use('/admin/products',auth,products)
 
 //SERVER CONFIG
 const PORT=3000

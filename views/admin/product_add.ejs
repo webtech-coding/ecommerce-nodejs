@@ -1,0 +1,59 @@
+<%- include('./navigation.ejs') %>
+    <div class="table__container">
+        <div class="admin">
+            <form action="/admin/products/add" method="POST" class="form" enctype="multipart/form-data">
+                <% if(errors) { %>
+                    <% errors.forEach(function(error) { %>
+                        <div class="message message--error">
+                            <%= error.msg %>
+                        </div>
+                    <% }); %>
+                <% }%>
+    
+                <%- messages('flash', locals) %>
+                
+                <div class="form__group">
+                    <label for="" class="form__label">Product Name : </label>
+                    <input type="text" class="form__input" value="" name="name">
+                </div>
+                <div class="form__group">
+                    <label for="" class="form__label">Price : </label>
+                    <input type="text" class="form__input" value="" name="price">
+                </div>
+                <div class="form__group">
+                    <label for="" class="form__label">Stock : </label>
+                    <input type="text" class="form__input" value="" name="stock">
+                </div>
+                <div class="form__group">
+                    <label for="" class="form__label">Category : </label>
+                    <select name="category" class="form__input">
+                        <% categories.forEach(function(category){%>
+                            <option class="form__input" value="<%=category.name%>"><%= category.name %></option>
+                        <% })%>
+                    </select>
+                </div>
+                <div class="form__group">
+                    <label for="" class="form__label">Description : </label>
+                    <textarea class="form__textarea" name="description" rows="10"></textarea>
+                </div>
+                <div class="form__group">
+                    <label for="" class="form__label">Images : </label>
+                    <input type="file" class="form__input images" name="images">
+                </div>
+
+                <div class="form__images">
+
+                </div>
+
+                <div class="form__group">
+                    <button class="form__button" type="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script>
+            CKEDITOR.replace( 'description' );
+    </script>
+    <script src="/js/preview.js"></script>
+
+<%- include('../includes/footer.ejs') %>

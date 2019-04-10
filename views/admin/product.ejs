@@ -1,0 +1,37 @@
+<%- include('./navigation')%>
+<div class="table__container">
+        <div class="table-users">
+            <div class="header">
+                <p>Peoducts</p>
+            </div>
+            <div>
+                <a href="/admin/products/add"><button class="table__button">Add new Product<span class="ti-plus"></span></button></a>
+            </div>
+            
+            <% if(count>0){ %>
+            <table cellspacing="0">
+                <tr>
+                    <th>PRODUCT NAME</th>
+                    <th>-</th>
+                    
+                </tr>
+                <% products.forEach(function(product){%>
+                <tr>
+                    <td><%= product.name %></td>
+                    <td> <a class="table-link" href=""><span class="ti-pencil"></span></a> |
+                        <a class="table-link delete" data-id=""><span class="ti-trash"></span></a></td>
+                </tr>
+                <% })%>            
+                
+            </table>
+            <%}else{%>
+                <div class="header">
+                    <h3>No any products yet</h3>
+                </div>
+                <%}%>
+        </div>
+    </div>
+<script src="/js/delete.js"></script>
+
+
+<%- include('../includes/footer.ejs') %>
