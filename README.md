@@ -20,5 +20,5 @@ Some of the features of this projects are :
 6. View product detail
 7. Add product to cart
 8. Manipulate product cart
-9. Landing pages
+9. Landing page
 
