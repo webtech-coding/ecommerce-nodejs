@@ -21,6 +21,8 @@ Some of the features of this projects are :
 7. Add product to cart
 8. Manipulate product cart
 9. Landing page
+10. SASS
+11. ES6
 
 # Landing Page Layout
 <img width="1663" alt="Screen Shot 2019-04-14 at 19 12 00" src="https://user-images.githubusercontent.com/46348451/56096095-6a496b00-5eec-11e9-9599-9174dd582de1.png">
