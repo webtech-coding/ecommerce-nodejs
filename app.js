@@ -52,6 +52,7 @@ app.locals.errors=null
 //SET LOCALS
 app.use((req,res,next)=>{
     res.locals.isAdmin=req.session.isAdmin
+    res.locals.cart=req.session.cart
     res.locals.messages=require('express-messages')(req, res)
     next()
 })
@@ -76,9 +77,11 @@ app.use('/admin/categories',auth,category)
 const products=require('./routes/product')
 app.use('/admin/products',auth,products)
 
+const cart=require('./routes/cart')
+app.use('/cart',cart)
+
 //SERVER CONFIG
 const PORT=3000
 app.listen(PORT,()=>{
     console.log('App started at port: '+PORT)
 })
-

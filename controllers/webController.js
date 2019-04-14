@@ -1,9 +1,16 @@
 const bcrypt=require('bcryptjs')
 const {validationResult}=require('express-validator/check')
 const User=require('../models/user')
+const Product=require('../models/product')
+const Category=require('../models/category')
 
-getHomePage=(req,res)=>{
-    res.render('web/index')
+getHomePage=async (req,res)=>{
+    const categories=await Category.find()
+    const products=await Product.find()
+    res.render('web/index',{
+        categories,
+        products
+    })
 }
 
 getLoginPage=(req,res)=>{
@@ -72,8 +79,25 @@ postUser=async (req,res)=>{
     }catch(error){
         res.send(error)
     }
-
    
 }
 
-module.exports={getHomePage,getLoginPage, postLogin,postLogout,postUser}
+getProduct=async (req,res)=>{
+    const id=req.params.id
+
+    const product=await Product.findById(id)
+    res.render('web/product',{
+        product
+    })
+}
+
+getProductCategory=async (req,res)=>{
+
+    const category=req.params.category
+    const products=await Product.find({category})
+    const categories=await Category.find()
+    
+    res.render('web/product_category',{products,categories})
+}
+
+module.exports={getHomePage,getLoginPage, postLogin,postLogout,postUser,getProduct,getProductCategory}

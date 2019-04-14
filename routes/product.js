@@ -13,4 +13,6 @@ route.post('/add',[
    
 ],productsController.postProduct)
 
+route.get('/delete/:id', productsController.deleteProduct)
+
 module.exports=route

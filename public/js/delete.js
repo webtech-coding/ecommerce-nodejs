@@ -12,7 +12,7 @@ class DeleteConfirm{
                 const con=confirm('Are you sure you want to delete the category')
                 if(con==true){
                     const id=el.getAttribute('data-id')
-                    window.location.href='/admin/categories/delete/'+id
+                    window.location.href=id
                 }
                 
             })

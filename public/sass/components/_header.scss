@@ -5,6 +5,11 @@
     justify-content: space-around;
     align-items: center;
 
+    a{
+        text-decoration: none;
+        color:#000;
+    }
+
     &__logo{
         text-align: center;
         letter-spacing: 1px;
@@ -53,16 +58,20 @@
     }
 
     &__cart{
-        cursor: pointer;
-        border-bottom: 1px dotted rgba(#000000, .8);
-        color: rgba(#000000, .8);
-        &:hover{
-            color: rgba(#000000, .4);
+        a{
+            text-decoration: none;
+            font-size: rem(14px);
+            cursor: pointer;
+            border-bottom: 1px dotted rgba(#000000, .8);
+            color: rgba(#000000, .8);
+            &:hover{
+                color: rgba(#000000, .4);
+            }
         }
-       
+
         &-amount{
-            
             font-size: rem(12px)
         }
+        
     }
 }

@@ -1,0 +1,57 @@
+<%- include('./../includes/header.ejs') %>
+<link href="https://fonts.googleapis.com/css?family=Raleway|Roboto:100|Righteous" rel="stylesheet">
+</head>
+<body>
+
+ <%- include('../includes/navigation.ejs') %>
+
+    <% if(errors) { %>
+        <% errors.forEach(function(error) { %>
+            <div class="message message--error">
+                <%= error.msg %>
+            </div>
+        <% }); %>
+    <% }%>
+
+    <%- messages('flash', locals) %>
+    
+    <div class="cart">
+        <% if(typeof carts  !='undefined'){%>
+            <% let subtotal=0 %>
+            <h3 class="cart__header">You collection in the cart</h3>
+            <table cellspacing="0">
+                <tr>
+                    <th>S.N</th>
+                    <th>Image </th>
+                    <th>Amount</th>
+                    <th>Total</th>
+                </tr>
+                <% carts.forEach(function(cart, index){%>
+                    <% subtotal += (cart.quantity * cart.price) %>
+                    <tr>
+                        <td>
+                            <%= index +1 %>
+                        </td>
+                        <td>
+                            <img src="/storage/<%=cart.image%>" class="cart__image"><br> <p class="cart__name"><%=cart.name %></p>
+                        </td>
+                        <td><a class="cart__button" href="/cart/update/<%=cart.id%>?action='remove'">-</a><button class="cart__button--number"><%=cart.quantity%></button><a class="cart__button" href="/cart/update/<%=cart.id%>?action='add'">+</a><a class="cart__button ti-trash" href="/cart/update/<%=cart.id%>?action='clear'"></a></td>
+                        <td><%=parseFloat((cart.quantity)*cart.price).toFixed(2) %> € </td>
+                       
+                    </tr>
+                <% })%>   
+                <tr>
+                    <td colspan="4" class="cart__subtotal" align="right"><b>Sub Total : <%= parseFloat(subtotal).toFixed(2) %></b> €</td>
+                </tr>
+            </table>
+            <div class="cart__actions">
+                <a class="cart__checkout">Go to payment</a>
+                <a class="cart__checkout" href="/cart/clear">Clear cart</a>
+            </div>
+
+        <%}else{%>
+            <h3 class="cart__header">You do not have any collections yet</h3>
+        <%}%>
+    </div>
+        
+<%- include('./../includes/footer.ejs') %>

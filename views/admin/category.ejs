@@ -20,7 +20,7 @@
                 <tr>
                     <td><%= category.name %></td>
                     <td> <a class="table-link" href="/admin/categories/edit/<%=category.slug%>"><span class="ti-pencil"></span></a> |
-                        <a class="table-link delete" data-id="<%=category._id%>"><span class="ti-trash"></span></a></td>
+                        <a class="table-link delete" data-id="/admin/categories/delete/<%=category._id%>"><span class="ti-trash"></span></a></td>
                 </tr>
                 <% })%>
             

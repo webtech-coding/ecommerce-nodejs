@@ -1,0 +1,54 @@
+.detail{
+    color:#000;
+    width: rem(1200px);
+    margin: rem(100px) auto;
+    display: flex;
+    align-items: center;
+    
+    &__image{
+        width: 50%;
+        
+        &-img{
+            width: 80%;
+        }
+    }
+
+    &__description{
+        width: 50%;
+        margin-left: rem(45px)
+    }
+
+    &__title{
+        text-transform: uppercase;
+    }
+
+    &__price, &__stock, &__category{
+        margin: rem(8px) 0px;
+    }
+
+    &__cart{
+        a{
+            color: #000;
+            text-decoration: none;
+        }
+        font-size: rem(14px);
+        cursor: pointer;
+        color: #000;
+        padding:rem(5px) 0;
+        margin-top: rem(20px);
+        padding-bottom: rem(5px);
+        border-bottom: 1px solid rgba(#000,.5);
+        display: inline-block;
+
+        &:hover{
+            cursor: pointer;
+            color:rgba(#000,.5);
+        }
+    }
+
+    &__text{
+        p{
+            padding-top: rem(10px);
+        }
+    }
+}

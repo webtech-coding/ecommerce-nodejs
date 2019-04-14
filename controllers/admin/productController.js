@@ -2,6 +2,7 @@ const Product=require('../../models/product')
 const Category=require('../../models/category')
 const {validationResult}=require('express-validator/check')
 const path=require('path')
+const fs=require('fs')
 
 const getProducts=async (req,res)=>{
 
@@ -62,7 +63,8 @@ const postProduct=async (req,res)=>{
             price:req.body.price,
             stock:req.body.stock,
             category:req.body.category,
-            slug:slug
+            slug:slug,
+            description:req.body.description
         })
 
         await product.save()
@@ -83,9 +85,26 @@ const postProduct=async (req,res)=>{
     }catch(error){
         console.log(error)
     }
-
-    
-    
 }
 
-module.exports={getProducts,addProduct,postProduct}
+const deleteProduct=async (req,res)=>{
+    const id=req.params.id
+
+    try{
+        const product=await Product.findOne({_id:id})
+        const image='public/storage/'+product.image
+
+
+        await Product.findByIdAndRemove(id)
+        fs.unlink(image,(error)=>{
+            console.log(error)
+            req.flash('success','The product has been deleted successfully.')
+            res.redirect('/admin/products')
+        })
+       
+    }catch(error){
+        console.log(error)
+    }
+}
+
+module.exports={getProducts,addProduct,postProduct,deleteProduct}

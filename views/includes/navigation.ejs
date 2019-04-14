@@ -1,0 +1,27 @@
+<header class="header container">
+    <a href="/">
+        <div class="header__logo">
+            <div class="header__logo-title">Fashion</div>
+            <div class="header__logo-subtitle">Trades</div>
+        </div>
+    </a>
+    <div class="header__menu">
+        <ul class="header__menu-items">
+            <li class="header__menu-item">New Arrivals</li>
+            <li class="header__menu-item">Dress</li>
+            <li class="header__menu-item">Bags</li>
+            <li class="header__menu-item">Assesories</li>
+            <li class="header__menu-item">Shoes</li>
+        </ul>
+        <div class="header__cart">
+            <a href="/cart/checkout"><i class="ti-shopping-cart"></i> 
+                <span class="header__cart-amount"> <% if(typeof cart !=="undefined"){%>
+                    ( <%=cart.length%> items )
+                <%}else{%>
+                    ( 0 items )
+                <%}%>
+                </span>
+            </a> 
+        </div>
+    </div>
+</header>

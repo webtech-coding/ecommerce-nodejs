@@ -13,5 +13,7 @@ webController.postLogin)
 
 route.get('/logout',webController.postLogout)
 route.post('/create-user',webController.postUser)
+route.get('/product/category/:category',webController.getProductCategory)
+route.get('/product/:id',webController.getProduct)
 
 module.exports=route

@@ -1,0 +1,39 @@
+<%- include('./../includes/header.ejs') %>
+<link href="https://fonts.googleapis.com/css?family=Raleway|Roboto:100|Righteous" rel="stylesheet">
+</head>
+<body>
+
+ <%- include('../includes/navigation.ejs') %>
+
+    <% if(errors) { %>
+        <% errors.forEach(function(error) { %>
+            <div class="message message--error">
+                <%= error.msg %>
+            </div>
+        <% }); %>
+    <% }%>
+
+    <%- messages('flash', locals) %>
+    
+    <section class="detail">
+        <div class="detail__image">
+            <img src="/storage/<%=product.image%>" class="detail__image-img">
+        </div>
+        <div class="detail__description">
+            <h2 class="detail__title"><%=product.name%></h2>
+            <div class="detail__price">Price : <%=product.price%> €</div>
+            <div class="detail__category">Category : <%=product.category%></div>
+            <div class="detail__stock">In Stock : <%=product.stock%></div>
+            <div class="detail__text">
+                <%- product.description %>
+            </div>
+            <div class="detail__cart"> 
+                <a href="/cart/<%=product._id%>">
+                    Add product to cart | <i class="ti-shopping-cart"></i> 
+                </a> 
+            </div>
+        </div>
+       
+    </section>
+        
+<%- include('./../includes/footer.ejs') %>

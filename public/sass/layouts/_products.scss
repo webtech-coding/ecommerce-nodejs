@@ -12,6 +12,10 @@
         font-weight: 100;
         margin-bottom: rem(100px);
     }
+
+    &__link{
+        color: #fff;
+    }
     
     &__container{
         display: grid;
@@ -46,6 +50,10 @@
             &:hover{
                 padding-left: 15px;
             }
+        }
+        &-link{
+            text-decoration: none;
+            color: #000000;
         }
 
     }

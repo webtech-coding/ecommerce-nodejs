@@ -1,0 +1,57 @@
+.cart{
+    width: rem(1200px);
+    margin: rem(50px) auto;
+    
+    &__header{
+        text-align: center;
+        margin: rem(20px) 0px;
+        text-transform: uppercase;
+    }
+    
+    &__image{
+        width: rem(80px)
+    }
+    &__name{
+        text-align: center;
+        text-transform: uppercase;
+        margin-top: rem(20px)
+    }
+
+    &__button{
+        padding: rem(8px);
+        border: 1px solid rgba($color: #000000, $alpha: .6);
+        margin: 0 rem(20px);
+        outline: none;
+        text-decoration: none;
+        color: #000;
+        cursor: pointer;
+
+        &--number{
+            font-size: rem(16px);
+            font-weight:600;
+            outline: none;
+            background: transparent;
+        }
+    }
+
+    &__checkout{
+        background: #000000;
+        padding:rem(10px) rem(20px);
+        color: #fff;
+        margin-top: rem(20px);
+        outline: none;
+        cursor: pointer;
+        text-decoration: none;
+    }
+
+    &__subtotal{
+        text-align: right;
+        font-weight: 600;
+        background: rgba(#000000,.1);
+        text-transform: uppercase;
+    }
+
+    &__actions{
+        margin-top: rem(25px);
+    }
+}
