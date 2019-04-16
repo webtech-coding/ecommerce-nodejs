@@ -12,7 +12,7 @@ This is an ecommerce project with nodejs and mongodb. EJS is used for the templa
 # Features
 Some of the features of this projects are :
 
-1. Login
+1. Authentication
 2. Middleware
 3. Categorys, Products forms with file uploads
 4. Edit, delete products, category
